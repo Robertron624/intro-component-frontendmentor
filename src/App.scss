@@ -1,5 +1,11 @@
+@mixin desktop {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
 // Colors
-$red: hsl(0, 100%, 74%); 
+$red: hsl(0, 100%, 74%);
 $green: hsl(154, 59%, 51%);
 
 // ### Accent
@@ -8,7 +14,7 @@ $blue: hsl(248, 32%, 49%);
 
 // ### Neutral
 
-$dark-blue: hsl(249, 10%, 26%); 
+$dark-blue: hsl(249, 10%, 26%);
 $grayish-blue: hsl(246, 25%, 77%);
 // ----------------
 
@@ -21,27 +27,66 @@ $border-5: 5px;
     height: 100%;
 }
 
-p, h1, h2 {
+p,
+h1,
+h2 {
     margin: 0;
 }
 
 .App {
     margin: 2rem 0;
     padding: 0 1.2rem;
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        max-width: 1280px;
+        gap: 1rem;
+    }
+
+    .try-form {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     .main-message {
         color: #fff;
         margin-bottom: 3.5rem;
 
+        @include desktop {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         h1 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            @include desktop {
+                font-size: 3.5rem;
+                line-height: 50px;
+            }
         }
         p {
             line-height: 25px;
             font-size: 1rem;
             padding: 0 1rem;
+            @include desktop {
+                padding: 0;
+            }
+        }
+
+        @include desktop {
+            width: 50%;
+            text-align: left;
         }
     }
+
+
 
     .try-it {
         background-color: $blue;
@@ -49,12 +94,12 @@ p, h1, h2 {
         padding: 1rem 4rem;
         color: #fff;
         margin-bottom: 1.5rem;
-        font-size: .875rem;
+        font-size: 0.875rem;
         line-height: 20px;
 
         h2 {
-            font-size: .875rem;
-            margin-bottom: .5rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
             display: inline;
         }
     }
@@ -75,24 +120,32 @@ p, h1, h2 {
                 width: 90%;
                 height: 2.5rem;
                 border-radius: $border-5;
-                outline-color: $grayish-blue;
                 border: 2px solid $grayish-blue;
+
+                &:active{
+                    border: 2px solid $blue;
+                }
 
                 &::placeholder {
                     padding-left: 1rem;
                     font-weight: 700;
                 }
             }
-    
+
             button {
                 width: 90%;
                 padding: 1rem 0;
                 border-radius: $border-5;
                 background-color: $green;
                 color: #fff;
-                font-size: .875rem;
+                font-size: 0.875rem;
                 border: none;
                 cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
 
             .terms {
@@ -107,10 +160,5 @@ p, h1, h2 {
                 }
             }
         }
-
     }
-
-
-
-
 }

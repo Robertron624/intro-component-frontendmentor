@@ -1,4 +1,11 @@
 
+@mixin desktop {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+    
+}
+
 body {
   margin: 0;
   display: flex;
@@ -24,5 +31,9 @@ body {
 
   background-image: url("/bg-intro-mobile.png");
   background-color: var(--red);
+
+  @include desktop {
+    background-image: url("/bg-intro-desktop.png");
+  }
 }
 

@@ -19,8 +19,8 @@ function TrialForm() {
                 <button type="submit">CLAIM YOU FREE TRAIL</button>
                 <p className="terms">
                     {" "}
-                    By clicking the button, you are agreeing to our <a>Terms and
-                    Services</a>
+                    By clicking the button, you are agreeing to our{" "}
+                    <a>Terms and Services</a>
                 </p>
             </form>
         </div>
@@ -28,7 +28,6 @@ function TrialForm() {
 }
 
 function App() {
-
     return (
         <div className="App">
             <div className="main-message">
@@ -39,11 +38,13 @@ function App() {
                     developers think is invaluable.
                 </p>
             </div>
-            <div className="try-it">
-                <h2>Try it free 7 days </h2>
-               then $20/mo, thereafter
+            <div className="try-form">
+                <div className="try-it">
+                    <h2>Try it free 7 days </h2>
+                    then $20/mo, thereafter
+                </div>
+                <TrialForm />
             </div>
-            <TrialForm />
         </div>
     );
 }
