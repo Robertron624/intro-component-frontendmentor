@@ -16,11 +16,11 @@ function TrialForm() {
                     placeholder="Email Address"
                 />
                 <input type="password" placeholder="Password" />
-                <button>CLAIM YOU FREE TRAIL</button>
+                <button type="submit">CLAIM YOU FREE TRAIL</button>
                 <p className="terms">
                     {" "}
-                    By clicking the button, you are agreeing to our <span>Terms and
-                    Services</span>
+                    By clicking the button, you are agreeing to our <a>Terms and
+                    Services</a>
                 </p>
             </form>
         </div>
@@ -28,7 +28,6 @@ function TrialForm() {
 }
 
 function App() {
-    const [count, setCount] = useState(0);
 
     return (
         <div className="App">
@@ -41,8 +40,8 @@ function App() {
                 </p>
             </div>
             <div className="try-it">
-                <h2>Try it free 7 days then $20/mo. thereafter</h2>
-                <span>$20/mo, thereafter</span>
+                <h2>Try it free 7 days</h2>
+               then $20/mo, thereafter
             </div>
             <TrialForm />
         </div>
