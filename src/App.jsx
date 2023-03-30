@@ -7,15 +7,20 @@ function TrialForm() {
     return (
         <div className="form-container">
             <form>
-                <input type="text" placeholder="First Name" />
-                <input type="text" placeholder="Last Name" />
+                <label hidden htmlFor="first_name">Email</label>
+                <input id="first_name" type="text" placeholder="First Name" />
+                <label hidden htmlFor="last_name">Lastname</label>
+                <input id="last_name" type="text" placeholder="Last Name" />
+                <label hidden htmlFor="email">Email</label>
                 <input
+                    id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email Address"
                 />
-                <input type="password" placeholder="Password" />
+                <label hidden htmlFor="password"></label>
+                <input id="password" type="password" placeholder="Password" />
                 <button type="submit">CLAIM YOU FREE TRAIL</button>
                 <p className="terms">
                     {" "}
