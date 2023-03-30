@@ -34,7 +34,7 @@ h2 {
 }
 
 .App {
-    margin: 2rem 0;
+    margin: 4rem 0;
     padding: 0 1.2rem;
 
     @include desktop {
@@ -66,9 +66,11 @@ h2 {
         h1 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            padding: 0 2rem;
             @include desktop {
                 font-size: 3.5rem;
                 line-height: 50px;
+                padding: 0;
             }
         }
         p {
@@ -107,10 +109,10 @@ h2 {
     .form-container {
         background-color: #fff;
         border-radius: $border-5;
-        padding: 1.3rem 1rem 0 1rem;
+        padding: 1.3rem 1rem 1.3rem 1rem;
 
         @include desktop {
-            padding: 1.3rem 1rem 1.3rem 2rem;
+            padding: 2.3rem 1rem;
         }
 
         form {
@@ -120,21 +122,51 @@ h2 {
             justify-content: center;
             gap: 1rem;
 
-            input {
-                width: 90%;
-                height: 2.5rem;
-                border-radius: $border-5;
-                border: 2px solid $grayish-blue;
+            .form-error {
+                color: $red;
+                font-size: 12px;
+                font-weight: 500;
+                display: flex;
+                justify-content: end;
+                font-style: italic;
+            }
 
-                &:active{
-                    border: 2px solid $blue;
+            .input-container {
+                width: 90%;
+                position: relative;
+                .input {
+                    height: 2.5rem;
+                    border-radius: $border-5;
+                    border: 2px solid $grayish-blue;
+                    width: 100%;
+                    margin-bottom: .3rem;
+                    padding: 0;
+    
+                    &:active{
+                        border: 2px solid $blue;
+                    }
+    
+                    &::placeholder {
+                        padding-left: 1rem;
+                        font-weight: 700;
+                    }
+                }
+    
+                .input-error {
+                    border: 2px solid $red;
+
+                    &::placeholder {
+                        color: $red;
+                    }
                 }
 
-                &::placeholder {
-                    padding-left: 1rem;
-                    font-weight: 700;
+                .error-icon {
+                    position: absolute;
+                    top: 14%;
+                    right: 5%;
                 }
             }
+
 
             button {
                 width: 90%;
