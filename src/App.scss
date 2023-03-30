@@ -26,6 +26,7 @@ p, h1, h2 {
 }
 
 .App {
+    margin: 2rem 0;
     padding: 0 1.2rem;
     .main-message {
         color: #fff;
@@ -36,22 +37,25 @@ p, h1, h2 {
             margin-bottom: 1rem;
         }
         p {
+            line-height: 25px;
             font-size: 1rem;
+            padding: 0 1rem;
         }
     }
 
     .try-it {
         background-color: $blue;
         border-radius: $border-5;
-        padding: 1rem 0;
+        padding: 1rem 4rem;
         color: #fff;
         margin-bottom: 1.5rem;
+        font-size: .875rem;
+        line-height: 20px;
 
         h2 {
             font-size: .875rem;
             margin-bottom: .5rem;
-
-            
+            display: inline;
         }
     }
 
@@ -69,8 +73,10 @@ p, h1, h2 {
 
             input {
                 width: 90%;
-                height: 2rem;
+                height: 2.5rem;
                 border-radius: $border-5;
+                outline-color: $grayish-blue;
+                border: 2px solid $grayish-blue;
 
                 &::placeholder {
                     padding-left: 1rem;
