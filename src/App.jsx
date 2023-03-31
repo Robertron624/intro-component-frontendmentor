@@ -42,6 +42,7 @@ function TrialForm() {
                         Email
                     </label>
                     <input
+                        role="textbox"
                         className={`input ${firstNameErrors ? 'input-error' : ''}`}
                         required={false}
                         id="first_name"
@@ -58,6 +59,7 @@ function TrialForm() {
                         Lastname
                     </label>
                     <input
+                        role="textbox"
                         className={`input ${lastNameErrors ? 'input-error' : ''}`}
                         id="last_name"
                         type="text"
@@ -73,6 +75,7 @@ function TrialForm() {
                         Email
                     </label>
                     <input
+                        role="textbox"
                         className={`input ${emailErrors ? 'input-error' : ''}`}
                         id="email"
                         type="email"
@@ -89,6 +92,7 @@ function TrialForm() {
                 <div className="input-container">
                     <label hidden htmlFor="password"></label>
                     <input
+                        role="textbox"
                         className={`input ${passwordErrors ? 'input-error' : ''}`}
                         id="password"
                         type="password"
@@ -99,8 +103,8 @@ function TrialForm() {
                     { passwordErrors && (<img src="/icon-error.svg" className="error-icon"/>)}
                 </div>
 
-                <button type="submit">CLAIM YOU FREE TRAIL</button>
-                <p className="terms">
+                <button role="button" type="submit">CLAIM YOU FREE TRAIL</button>
+                <p role="note" className="terms">
                     {" "}
                     By clicking the button, you are agreeing to our{" "}
                     <a>Terms and Services</a>
@@ -114,7 +118,7 @@ function App() {
     return (
         <div className="App">
             <div className="main-message">
-                <h1>Learn to code by watching others</h1>
+                <h1 role="heading">Learn to code by watching others</h1>
                 <p>
                     See how experienced developers solve problems in real-time.
                     Watching scripted tutorials is great, but understanding how
@@ -123,7 +127,7 @@ function App() {
             </div>
             <div className="try-form">
                 <div className="try-it">
-                    <h2>Try it free 7 days </h2>
+                    <h2 role="banner">Try it free 7 days </h2>
                     then $20/mo, thereafter
                 </div>
                 <TrialForm />
